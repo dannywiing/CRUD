@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Snippet</title>
+</head>
+<body>
+  <h1>Edit Snippet</h1>
+  <!-- Edit form -->
+  <%- include('template/header') %>
+
+  <form method="POST" action="/snippets/<%= snippet._id %>/edit">
+  
+    <input type="text" name="title" value="<%= snippet.title %>" required>
+    <br>
+
+    <textarea name="code" rows="5" cols="40" required><%= snippet.code %></textarea>
+    <br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+  <%- include('template/footer') %>
+</body>
+</html>

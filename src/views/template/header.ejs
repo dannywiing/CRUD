@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snippet App</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+</head>
+<body>
+  
+<nav class="navbar">
+  <div>
+    <a href="/" class="solid-btn">Home</a>
+    <a href="/snippets" class="solid-btn">Snippets</a>
+  </div>
+
+  <div>
+    <% if (sessionUserId) { %>
+
+      <form method="POST" action="/logout" style="display:inline;">
+        <button class="solid-btn">Logout</button>
+      </form>
+
+    <% } else { %>
+
+      <a href="/login" class="solid-btn">Login</a>
+      <a href="/register" class="solid-btn">Register</a>
+
+    <% } %>
+  </div>
+</nav>
+
+<div class="container">

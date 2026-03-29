@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  background: #111111;
+  color: #f5f5f5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 50px;
+  border-bottom: 2px solid rgb(255, 255, 255)
+}
+
+.navbar .solid-btn {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+/* Solid shadow button */
+button,
+.solid-btn {
+  background: #3d3b3b;
+  color: white;
+  border: 2px solid black;
+  padding: 15px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 6px 6px 0px black;
+  transition: all 0.15s ease;
+}
+
+/* Hover effect */
+button:hover,
+.solid-btn:hover {
+  transform: translate(3px, 3px);
+  box-shadow: 3px 3px 0px black;
+}
+
+/* Active effect */
+button:active,
+.solid-btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0px 0px 0px black;
+}
+
+/* forms */
+input, textarea {
+  margin-top: 5px;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+small {
+  font-size: medium;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.button-style {
+  margin: 5px;
+}
+
+pre {
+  background: #0d0d0d;
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  margin-top: 15px;
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+}
+
+/* Error */
+.error-box {
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 16px;
+  border: 2px solid #222;
+  margin-bottom: 30px;
+  font-size: 18px;
+}

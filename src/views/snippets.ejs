@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All snippets</title>
+</head>
+<body>
+  <!-- Snippet page -->
+  <h1>Snippets</h1>
+  <%- include('template/header') %>
+
+  <% if (sessionUserId) { %>
+    <h2>Create Snippet</h2>
+    <form method="POST" action="/snippets">
+      <input type="text" name="title" placeholder="Title" required>
+      <br>
+      <textarea name="code" rows="5" cols="40" required></textarea>
+      <br>
+      <button type="submit">Create</button>
+    </form>
+  <% } %>
+  <!-- Checking if there are no snippets -->
+  <% if (snippets.length === 0) { %>
+    <p>No snippets found.</p>
+  <% } %>
+
+  <!-- Looping through all snippets -->
+  <% snippets.forEach(snippet => { %>
+    <div style="border:1px solid black; margin:10px; padding:10px;">
+      <small>By: <%= snippet.owner.username %></small>
+      <h3><%= snippet.title %></h3>
+      <pre><code><%= snippet.code %></code></pre>
+    <% if (sessionUserId && snippet.owner._id.toString() === sessionUserId) { %>
+
+    <form method="POST" action="/snippets/<%= snippet._id %>/delete">
+      <button type="submit" class="button-style">Delete</button>
+    </form>
+
+    <form method="GET" action="/snippets/<%= snippet._id %>/edit">
+      <button type="submit" class="button-style">Edit</button>
+    </form>
+
+    <% } %>
+    </div>
+  <% }) %>
+
+  <%- include('template/footer') %>
+</body>
+</html>
